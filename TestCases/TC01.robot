@@ -6,17 +6,14 @@ ${BROWSER}  chrome
 ${URL}  https://demo.nopcommerce.com/
 
 *** Test Cases ***
-Login Testgit
-    [Template]  Login With Credentials
-    info.emredursun@gmail.com  13579Odd
+LoginTest
+        open browser  ${URL}  ${BROWSER}
+        loginToAplication
+        close browser
 
 *** Keywords ***
-Login With Credentials
-    [Arguments]  ${email}  ${password}
-        open browser  ${URL}  ${BROWSER}
+loginToAplication
         click link  xpath://a[@class='ico-login']
-        Wait Until Element Is Visible  id:Email
-        input text  id:Email    ${email}
-        input text  id:Password  ${password}
+        input text  id:Email    info.emredursun@gmail.com
+        input text  id:Password  13579Odd
         click element  xpath:(//button[@type='submit'])[2]
-    close browser
