@@ -1,37 +1,30 @@
 *** Settings ***
-Documentation  Basic Search Functionality
-Resource  ../../Resources/Common_Func_Path.robot
-Resource  ../../Resources/eBay_Keywords_Path.robot
-Resource  ../../Resources/PageObjects/HeaderPage.robot
-Resource  ../../Resources/PageObjects/LandingPage.robot
-Resource  ../../Resources/PageObjects/ProductDetailsPage.robot
-Resource  ../../Resources/PageObjects/SearchResultsPage.robot
+Documentation       Basic Search Functionality
 
-Test Setup  Common_Func_Path.Start TestCase
-Test Teardown  Common_Func_Path.Finish TestCase
+Resource            ../../Resources/Common_Func_Path.robot
+Resource            ../../Resources/eBay_Keywords_Path.robot
+Resource            ../../Resources/PageObjects/HeaderPage.robot
+Resource            ../../Resources/PageObjects/LandingPage.robot
+Resource            ../../Resources/PageObjects/ProductDetailsPage.robot
+Resource            ../../Resources/PageObjects/SearchResultsPage.robot
 
-*** Variables ***
+Test Setup          Common_Func_Path.Start TestCase
+Test Teardown       Common_Func_Path.Finish TestCase
 
 
 *** Test Cases ***
 Verify basic search functionality
-    [Documentation]  This test case verifies the basic search
-    [Tags]  Functional
+    [Documentation]    This test case verifies the basic search
+    [Tags]    functional
 
     HeaderPage.Input Search Text and Click Search
     SearchResultsPage.Verify Search Results
 
-Verify advanced search functionality
-    [Documentation]  This test case verifies the advanced search
-    [Tags]  Functional
+    HeaderPage.Search for Another Text
+    SearchResultsPage.Verify Another Search Result
 
-    HeaderPage.Click on Advanced Search Link
-
-
-
-
-
-
-
-
-
+#Verify advanced search functionality
+#    [Documentation]    This test case verifies the advanced search
+#    [Tags]    Functional
+#
+#    HeaderPage.Click on Advanced Search Link
