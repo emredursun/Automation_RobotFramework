@@ -27,4 +27,4 @@ Verify basic search functionality
 #    [Documentation]    This test case verifies the advanced search
 #    [Tags]    Functional
 #
-#    HeaderPage.Click on Advanced Search Link
+#    HeaderPage.Click on Advanced Search  Link
