@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20230402 03:40:37.719" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20230402 04:51:29.044" rpa="false" schemaversion="3">
 <suite id="s1" name="Verify Search Func" source="D:\TechProEdu\PycharmProjects\Automation_RobotFramework\Tests\eBay\Verify_Search_Func.robot">
 <test id="s1-t1" name="Verify basic search functionality" line="17">
 <kw name="Start TestCase" library="Common_Func_Path" type="SETUP">
@@ -7,53 +7,53 @@
 <arg>https://www.ebay.com/</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230402 03:40:37.859" level="INFO">Opening browser 'chrome' to base url 'https://www.ebay.com/'.</msg>
-<status status="PASS" starttime="20230402 03:40:37.859" endtime="20230402 03:40:42.046"/>
+<msg timestamp="20230402 04:51:29.191" level="INFO">Opening browser 'chrome' to base url 'https://www.ebay.com/'.</msg>
+<status status="PASS" starttime="20230402 04:51:29.191" endtime="20230402 04:51:33.931"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230402 03:40:42.047" endtime="20230402 03:40:42.191"/>
+<status status="PASS" starttime="20230402 04:51:33.932" endtime="20230402 04:51:34.066"/>
 </kw>
-<status status="PASS" starttime="20230402 03:40:37.859" endtime="20230402 03:40:42.191"/>
+<status status="PASS" starttime="20230402 04:51:29.190" endtime="20230402 04:51:34.066"/>
 </kw>
 <kw name="Input Search Text and Click Search" library="HeaderPage">
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>xpath://*[@id="gh-ac"]</arg>
-<arg>mobile</arg>
+<arg>${search_text}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230402 03:40:42.193" level="INFO">Typing text 'mobile' into text field 'xpath://*[@id="gh-ac"]'.</msg>
-<status status="PASS" starttime="20230402 03:40:42.192" endtime="20230402 03:40:42.525"/>
+<msg timestamp="20230402 04:51:34.070" level="INFO">Typing text 'robot' into text field 'xpath://*[@id="gh-ac"]'.</msg>
+<status status="PASS" starttime="20230402 04:51:34.069" endtime="20230402 04:51:34.393"/>
 </kw>
 <kw name="Press Keys" library="SeleniumLibrary">
 <arg>xpath://*[@id="gh-btn"]</arg>
 <arg>RETURN</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20230402 03:40:42.526" level="INFO">Sending key(s) ('RETURN',) to xpath://*[@id="gh-btn"] element.</msg>
-<msg timestamp="20230402 03:40:46.956" level="INFO">Pressing special key RETURN to element.</msg>
-<msg timestamp="20230402 03:40:46.956" level="INFO">Releasing special key RETURN.</msg>
-<status status="PASS" starttime="20230402 03:40:42.525" endtime="20230402 03:40:46.987"/>
+<msg timestamp="20230402 04:51:34.394" level="INFO">Sending key(s) ('RETURN',) to xpath://*[@id="gh-btn"] element.</msg>
+<msg timestamp="20230402 04:51:37.925" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20230402 04:51:37.926" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20230402 04:51:34.393" endtime="20230402 04:51:37.953"/>
 </kw>
-<status status="PASS" starttime="20230402 03:40:42.192" endtime="20230402 03:40:46.987"/>
+<status status="PASS" starttime="20230402 04:51:34.068" endtime="20230402 04:51:37.953"/>
 </kw>
 <kw name="Verify Search Results" library="SearchResultsPage">
 <kw name="Page Should Contain" library="SeleniumLibrary">
-<arg>results for mobile</arg>
+<arg>${search_result} ${search_text}</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20230402 03:40:47.165" level="INFO">Current page contains text 'results for mobile'.</msg>
-<status status="PASS" starttime="20230402 03:40:46.988" endtime="20230402 03:40:47.165"/>
+<msg timestamp="20230402 04:51:38.113" level="INFO">Current page contains text 'results for robot'.</msg>
+<status status="PASS" starttime="20230402 04:51:37.954" endtime="20230402 04:51:38.113"/>
 </kw>
-<status status="PASS" starttime="20230402 03:40:46.987" endtime="20230402 03:40:47.165"/>
+<status status="PASS" starttime="20230402 04:51:37.954" endtime="20230402 04:51:38.113"/>
 </kw>
 <kw name="Finish TestCase" library="Common_Func_Path" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230402 03:40:47.167" endtime="20230402 03:40:49.482"/>
+<status status="PASS" starttime="20230402 04:51:38.114" endtime="20230402 04:51:40.441"/>
 </kw>
-<status status="PASS" starttime="20230402 03:40:47.167" endtime="20230402 03:40:49.483"/>
+<status status="PASS" starttime="20230402 04:51:38.114" endtime="20230402 04:51:40.441"/>
 </kw>
 <doc>This test case verifies the basic search</doc>
 <tag>Functional</tag>
-<status status="PASS" starttime="20230402 03:40:37.859" endtime="20230402 03:40:49.484"/>
+<status status="PASS" starttime="20230402 04:51:29.190" endtime="20230402 04:51:40.443"/>
 </test>
 <test id="s1-t2" name="Verify advanced search functionality" line="24">
 <kw name="Start TestCase" library="Common_Func_Path" type="SETUP">
@@ -61,37 +61,37 @@
 <arg>https://www.ebay.com/</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230402 03:40:49.489" level="INFO">Opening browser 'chrome' to base url 'https://www.ebay.com/'.</msg>
-<status status="PASS" starttime="20230402 03:40:49.488" endtime="20230402 03:40:53.648"/>
+<msg timestamp="20230402 04:51:40.453" level="INFO">Opening browser 'chrome' to base url 'https://www.ebay.com/'.</msg>
+<status status="PASS" starttime="20230402 04:51:40.452" endtime="20230402 04:51:44.606"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230402 03:40:53.648" endtime="20230402 03:40:53.801"/>
+<status status="PASS" starttime="20230402 04:51:44.606" endtime="20230402 04:51:44.739"/>
 </kw>
-<status status="PASS" starttime="20230402 03:40:49.487" endtime="20230402 03:40:53.801"/>
+<status status="PASS" starttime="20230402 04:51:40.452" endtime="20230402 04:51:44.739"/>
 </kw>
 <kw name="Click on Advanced Search Link" library="HeaderPage">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath://*[@id="gh-as-a"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230402 03:40:53.803" level="INFO">Clicking element 'xpath://*[@id="gh-as-a"]'.</msg>
-<status status="PASS" starttime="20230402 03:40:53.802" endtime="20230402 03:40:55.847"/>
+<msg timestamp="20230402 04:51:44.742" level="INFO">Clicking element 'xpath://*[@id="gh-as-a"]'.</msg>
+<status status="PASS" starttime="20230402 04:51:44.741" endtime="20230402 04:51:45.986"/>
 </kw>
-<status status="PASS" starttime="20230402 03:40:53.802" endtime="20230402 03:40:55.847"/>
+<status status="PASS" starttime="20230402 04:51:44.741" endtime="20230402 04:51:45.986"/>
 </kw>
 <kw name="Finish TestCase" library="Common_Func_Path" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230402 03:40:55.849" endtime="20230402 03:40:58.091"/>
+<status status="PASS" starttime="20230402 04:51:45.987" endtime="20230402 04:51:48.242"/>
 </kw>
-<status status="PASS" starttime="20230402 03:40:55.849" endtime="20230402 03:40:58.091"/>
+<status status="PASS" starttime="20230402 04:51:45.987" endtime="20230402 04:51:48.242"/>
 </kw>
 <doc>This test case verifies the advanced search</doc>
 <tag>Functional</tag>
-<status status="PASS" starttime="20230402 03:40:49.486" endtime="20230402 03:40:58.092"/>
+<status status="PASS" starttime="20230402 04:51:40.451" endtime="20230402 04:51:48.243"/>
 </test>
 <doc>Basic Search Functionality</doc>
-<status status="PASS" starttime="20230402 03:40:37.720" endtime="20230402 03:40:58.096"/>
+<status status="PASS" starttime="20230402 04:51:29.045" endtime="20230402 04:51:48.247"/>
 </suite>
 <statistics>
 <total>
@@ -105,6 +105,5 @@
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20230402 03:40:37.855" level="WARN">Imported resource file 'D:\TechProEdu\PycharmProjects\Automation_RobotFramework\Resources\PageObjects\ProductDetailsPage.robot' is empty.</msg>
 </errors>
 </robot>
