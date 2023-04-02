@@ -1,100 +1,262 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20230403 01:02:40.353" rpa="false" schemaversion="3">
-<suite id="s1" name="Verify Search Func" source="d:\TechProEdu\PycharmProjects\Automation_RobotFramework\Tests\eBay\Verify_Search_Func.robot">
-<test id="s1-t1" name="Verify basic search functionality" line="16">
-<kw name="Start TestCase" library="Common_Func_Path" type="SETUP">
+<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20230403 01:36:30.179" rpa="false" schemaversion="3">
+<suite id="s1" name="Nopcommerce" source="d:\TechProEdu\PycharmProjects\Automation_RobotFramework\tests\nopcommerce">
+<suite id="s1-s1" name="InputBox01" source="d:\TechProEdu\PycharmProjects\Automation_RobotFramework\tests\nopcommerce\InputBox01.robot">
+<test id="s1-s1-t1" name="Testing Input Box" line="9">
 <kw name="Open Browser" library="SeleniumLibrary">
-<arg>https://www.ebay.com/</arg>
-<arg>chrome</arg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230403 01:02:40.484" level="INFO">Opening browser 'chrome' to base url 'https://www.ebay.com/'.</msg>
-<status status="PASS" starttime="20230403 01:02:40.484" endtime="20230403 01:02:44.709"/>
+<msg timestamp="20230403 01:36:30.319" level="INFO">Opening browser 'chrome' to base url 'https://demo.nopcommerce.com/'.</msg>
+<status status="PASS" starttime="20230403 01:36:30.319" endtime="20230403 01:36:34.170"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230403 01:02:44.709" endtime="20230403 01:02:44.868"/>
+<status status="PASS" starttime="20230403 01:36:34.171" endtime="20230403 01:36:34.308"/>
 </kw>
-<status status="PASS" starttime="20230403 01:02:40.483" endtime="20230403 01:02:44.868"/>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>nopCommerce demo store</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230403 01:36:34.317" level="INFO">Page title is 'nopCommerce demo store'.</msg>
+<status status="PASS" starttime="20230403 01:36:34.309" endtime="20230403 01:36:34.318"/>
 </kw>
-<kw name="Input Search Text and Click Search" library="HeaderPage">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>xpath=//a[contains(text(),'Log in')]</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20230403 01:36:34.319" level="INFO">Clicking link 'xpath=//a[contains(text(),'Log in')]'.</msg>
+<status status="PASS" starttime="20230403 01:36:34.319" endtime="20230403 01:36:35.119"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${email_input}</var>
+<arg>id=Email</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230403 01:36:35.120" level="INFO">${email_input} = id=Email</msg>
+<status status="PASS" starttime="20230403 01:36:35.120" endtime="20230403 01:36:35.120"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${email_input}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230403 01:36:35.121" endtime="20230403 01:36:35.136"/>
+</kw>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>xpath://*[@id="gh-ac"]</arg>
-<arg>${search_text}[1]</arg>
+<arg>${email_input}</arg>
+<arg>info.emredursun@gmail.com</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230403 01:02:44.870" level="INFO">Typing text 'travel' into text field 'xpath://*[@id="gh-ac"]'.</msg>
-<status status="PASS" starttime="20230403 01:02:44.870" endtime="20230403 01:02:45.240"/>
+<msg timestamp="20230403 01:36:35.137" level="INFO">Typing text 'info.emredursun@gmail.com' into text field 'id=Email'.</msg>
+<status status="PASS" starttime="20230403 01:36:35.137" endtime="20230403 01:36:35.288"/>
 </kw>
-<kw name="Press Keys" library="SeleniumLibrary">
-<arg>xpath://*[@id="gh-btn"]</arg>
-<arg>RETURN</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20230403 01:02:45.242" level="INFO">Sending key(s) ('RETURN',) to xpath://*[@id="gh-btn"] element.</msg>
-<msg timestamp="20230403 01:02:50.842" level="INFO">Pressing special key RETURN to element.</msg>
-<msg timestamp="20230403 01:02:50.842" level="INFO">Releasing special key RETURN.</msg>
-<status status="PASS" starttime="20230403 01:02:45.240" endtime="20230403 01:02:50.885"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230403 01:36:40.289" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230403 01:36:35.288" endtime="20230403 01:36:40.289"/>
 </kw>
-<status status="PASS" starttime="20230403 01:02:44.869" endtime="20230403 01:02:50.886"/>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${email_input}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20230403 01:36:40.291" endtime="20230403 01:36:40.367"/>
 </kw>
-<kw name="Verify Search Results" library="SearchResultsPage">
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<arg>${search_result} ${search_text}[1]</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20230403 01:02:51.015" level="INFO">Current page contains text 'results for travel'.</msg>
-<status status="PASS" starttime="20230403 01:02:50.887" endtime="20230403 01:02:51.017"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230403 01:36:43.368" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230403 01:36:40.368" endtime="20230403 01:36:43.368"/>
 </kw>
-<status status="PASS" starttime="20230403 01:02:50.887" endtime="20230403 01:02:51.018"/>
-</kw>
-<kw name="Search for Another Text" library="HeaderPage">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>xpath://*[@id="gh-ac"]</arg>
-<arg>${search_text}[3]</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230403 01:02:51.024" level="INFO">Typing text 'gifts' into text field 'xpath://*[@id="gh-ac"]'.</msg>
-<status status="PASS" starttime="20230403 01:02:51.022" endtime="20230403 01:02:51.322"/>
-</kw>
-<kw name="Press Keys" library="SeleniumLibrary">
-<arg>xpath://*[@id="gh-btn"]</arg>
-<arg>RETURN</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20230403 01:02:51.324" level="INFO">Sending key(s) ('RETURN',) to xpath://*[@id="gh-btn"] element.</msg>
-<msg timestamp="20230403 01:02:53.492" level="INFO">Pressing special key RETURN to element.</msg>
-<msg timestamp="20230403 01:02:53.492" level="INFO">Releasing special key RETURN.</msg>
-<status status="PASS" starttime="20230403 01:02:51.323" endtime="20230403 01:02:53.514"/>
-</kw>
-<status status="PASS" starttime="20230403 01:02:51.020" endtime="20230403 01:02:53.515"/>
-</kw>
-<kw name="Verify Another Search Result" library="SearchResultsPage">
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<arg>${search_result} ${search_text}[3]</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20230403 01:02:53.616" level="INFO">Current page contains text 'results for gifts'.</msg>
-<status status="PASS" starttime="20230403 01:02:53.516" endtime="20230403 01:02:53.616"/>
-</kw>
-<status status="PASS" starttime="20230403 01:02:53.515" endtime="20230403 01:02:53.620"/>
-</kw>
-<kw name="Finish TestCase" library="Common_Func_Path" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230403 01:02:53.620" endtime="20230403 01:02:55.919"/>
+<status status="PASS" starttime="20230403 01:36:43.368" endtime="20230403 01:36:45.611"/>
 </kw>
-<status status="PASS" starttime="20230403 01:02:53.620" endtime="20230403 01:02:55.919"/>
-</kw>
-<doc>This test case verifies the basic search</doc>
-<tag>functional</tag>
-<status status="PASS" starttime="20230403 01:02:40.483" endtime="20230403 01:02:55.919"/>
+<status status="PASS" starttime="20230403 01:36:30.318" endtime="20230403 01:36:45.611"/>
 </test>
-<doc>Basic Search Functionality</doc>
-<status status="PASS" starttime="20230403 01:02:40.359" endtime="20230403 01:02:55.922"/>
+<status status="PASS" starttime="20230403 01:36:30.199" endtime="20230403 01:36:45.615"/>
+</suite>
+<suite id="s1-s2" name="InputBox02" source="d:\TechProEdu\PycharmProjects\Automation_RobotFramework\tests\nopcommerce\InputBox02.robot">
+<kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230403 01:36:45.623" level="INFO">Opening browser 'chrome' to base url 'https://demo.nopcommerce.com/'.</msg>
+<status status="PASS" starttime="20230403 01:36:45.623" endtime="20230403 01:36:49.550"/>
+</kw>
+<test id="s1-s2-t1" name="Testing Input Box" line="11">
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230403 01:36:49.552" endtime="20230403 01:36:49.677"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>nopCommerce demo store</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230403 01:36:49.686" level="INFO">Page title is 'nopCommerce demo store'.</msg>
+<status status="PASS" starttime="20230403 01:36:49.678" endtime="20230403 01:36:49.687"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>xpath=//a[contains(text(),'Log in')]</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20230403 01:36:49.688" level="INFO">Clicking link 'xpath=//a[contains(text(),'Log in')]'.</msg>
+<status status="PASS" starttime="20230403 01:36:49.688" endtime="20230403 01:36:50.521"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${email_input}</var>
+<arg>xpath=//input[@id='Email']</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230403 01:36:50.523" level="INFO">${email_input} = xpath=//input[@id='Email']</msg>
+<status status="PASS" starttime="20230403 01:36:50.523" endtime="20230403 01:36:50.523"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${email_input}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230403 01:36:50.524" endtime="20230403 01:36:50.569"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${email_input}</arg>
+<arg>info.emredursun@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230403 01:36:50.570" level="INFO">Typing text 'info.emredursun@gmail.com' into text field 'xpath=//input[@id='Email']'.</msg>
+<status status="PASS" starttime="20230403 01:36:50.569" endtime="20230403 01:36:50.709"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230403 01:36:53.711" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230403 01:36:50.709" endtime="20230403 01:36:53.711"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${email_input}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20230403 01:36:53.712" endtime="20230403 01:36:53.744"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230403 01:36:56.745" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230403 01:36:53.745" endtime="20230403 01:36:56.745"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230403 01:36:56.746" endtime="20230403 01:36:58.927"/>
+</kw>
+<doc>This test case is to verify input box functionality</doc>
+<status status="PASS" starttime="20230403 01:36:49.551" endtime="20230403 01:36:58.928"/>
+</test>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230403 01:36:58.930" endtime="20230403 01:36:58.931"/>
+</kw>
+<status status="PASS" starttime="20230403 01:36:45.619" endtime="20230403 01:36:58.931"/>
+</suite>
+<suite id="s1-s3" name="TC01" source="d:\TechProEdu\PycharmProjects\Automation_RobotFramework\tests\nopcommerce\TC01.robot">
+<test id="s1-s3-t1" name="LoginTest" line="9">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230403 01:36:58.937" level="INFO">Opening browser 'chrome' to base url 'https://demo.nopcommerce.com/'.</msg>
+<status status="PASS" starttime="20230403 01:36:58.936" endtime="20230403 01:37:02.738"/>
+</kw>
+<kw name="loginToAplication">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>xpath://a[@class='ico-login']</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20230403 01:37:02.740" level="INFO">Clicking link 'xpath://a[@class='ico-login']'.</msg>
+<status status="PASS" starttime="20230403 01:37:02.739" endtime="20230403 01:37:03.094"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:Email</arg>
+<arg>info.emredursun@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230403 01:37:03.094" level="INFO">Typing text 'info.emredursun@gmail.com' into text field 'id:Email'.</msg>
+<status status="PASS" starttime="20230403 01:37:03.094" endtime="20230403 01:37:03.284"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:Password</arg>
+<arg>13579Odd</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230403 01:37:03.285" level="INFO">Typing text '13579Odd' into text field 'id:Password'.</msg>
+<status status="PASS" starttime="20230403 01:37:03.284" endtime="20230403 01:37:03.347"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath:(//button[@type='submit'])[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230403 01:37:03.348" level="INFO">Clicking element 'xpath:(//button[@type='submit'])[2]'.</msg>
+<status status="PASS" starttime="20230403 01:37:03.348" endtime="20230403 01:37:03.651"/>
+</kw>
+<status status="PASS" starttime="20230403 01:37:02.739" endtime="20230403 01:37:03.651"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230403 01:37:03.652" endtime="20230403 01:37:05.812"/>
+</kw>
+<status status="PASS" starttime="20230403 01:36:58.936" endtime="20230403 01:37:05.813"/>
+</test>
+<status status="PASS" starttime="20230403 01:36:58.932" endtime="20230403 01:37:05.816"/>
+</suite>
+<suite id="s1-s4" name="TC02" source="d:\TechProEdu\PycharmProjects\Automation_RobotFramework\tests\nopcommerce\TC02.robot">
+<kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230403 01:37:05.823" level="INFO">Opening browser 'chrome' to base url 'https://demo.nopcommerce.com/'.</msg>
+<status status="PASS" starttime="20230403 01:37:05.823" endtime="20230403 01:37:09.682"/>
+</kw>
+<test id="s1-s4-t1" name="Login Test" line="11">
+<kw name="Login With Credentials">
+<arg>info.emredursun@gmail.com</arg>
+<arg>13579Odd</arg>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>xpath=//a[@class='ico-login']</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20230403 01:37:09.684" level="INFO">Clicking link 'xpath=//a[@class='ico-login']'.</msg>
+<status status="PASS" starttime="20230403 01:37:09.683" endtime="20230403 01:37:10.025"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>id=Email</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230403 01:37:10.025" endtime="20230403 01:37:10.033"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=Email</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230403 01:37:10.033" level="INFO">Typing text 'info.emredursun@gmail.com' into text field 'id=Email'.</msg>
+<status status="PASS" starttime="20230403 01:37:10.033" endtime="20230403 01:37:10.153"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=Password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230403 01:37:10.153" level="INFO">Typing text '13579Odd' into text field 'id=Password'.</msg>
+<status status="PASS" starttime="20230403 01:37:10.153" endtime="20230403 01:37:10.223"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath=(//button[@type='submit'])[2]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230403 01:37:10.224" level="INFO">Clicking button 'xpath=(//button[@type='submit'])[2]'.</msg>
+<status status="PASS" starttime="20230403 01:37:10.223" endtime="20230403 01:37:10.520"/>
+</kw>
+<status status="PASS" starttime="20230403 01:37:09.683" endtime="20230403 01:37:10.521"/>
+</kw>
+<status status="PASS" starttime="20230403 01:37:09.682" endtime="20230403 01:37:10.521"/>
+</test>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230403 01:37:10.522" endtime="20230403 01:37:16.700"/>
+</kw>
+<status status="PASS" starttime="20230403 01:37:05.819" endtime="20230403 01:37:16.700"/>
+</suite>
+<status status="PASS" starttime="20230403 01:36:30.184" endtime="20230403 01:37:16.704"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">functional</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Verify Search Func">Verify Search Func</stat>
+<stat pass="4" fail="0" skip="0" id="s1" name="Nopcommerce">Nopcommerce</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="InputBox01">Nopcommerce.InputBox01</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s2" name="InputBox02">Nopcommerce.InputBox02</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s3" name="TC01">Nopcommerce.TC01</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s4" name="TC02">Nopcommerce.TC02</stat>
 </suite>
 </statistics>
 <errors>

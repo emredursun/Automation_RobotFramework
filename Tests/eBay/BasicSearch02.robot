@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation  Basic Search Functionality
-Resource  ../../Resources/CommonFunctionality.robot
-Resource  ../../Resources/eBay_UserDefinedKeywords.robot
+Resource  ../../Resources/Common_Func_Path.robot
+Resource  ../../Resources/eBay_Keywords_Path.robot
 
 *** Variables ***
 

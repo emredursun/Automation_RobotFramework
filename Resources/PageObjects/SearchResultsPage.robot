@@ -7,10 +7,10 @@ ${search_result}   results for
 
 *** Keywords ***
 Verify Search Results
-    Page Should Contain  ${search_result} ${search_text}[1]
+    Page Should Contain  ${search_result} ${search_text.key1}
 
 Verify Another Search Result
-    Page Should Contain  ${search_result} ${search_text}[3]
+    Page Should Contain  ${search_result} ${search_text.key2}
 
 Select Product Condition
 
