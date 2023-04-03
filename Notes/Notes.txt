@@ -1,0 +1,21 @@
+
+Robot Framework
+1. Install Python on Windows
+2. Install PyCharm IDE
+***Pre-Requisites***
+# Install Selenium => pip install selenium    => pip show selenium
+# Install roboframework => pip install robotframework
+# Install Robotframework Selenium Library => pip install robotframework-seleniumlibrary
+
+*** To See Installed Packages***
+# pip list
+
+*** Install Plugins***
+# intelliBot @ Selenium
+
+
+*** To Configure the test Results Directory***
+# robot -d results Tests\Google\FunctionalTestSuit\GoogleSearch.robot
+
+*** Dictionary Variable in Robot Framework ***
+Terminal run code: robot -d results -v env:eBay  Tests\eBay\Verify_Search_Func.robot
