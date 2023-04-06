@@ -1,100 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20230403 01:57:29.167" rpa="false" schemaversion="3">
-<suite id="s1" name="Verify Search Func" source="D:\TechProEdu\PycharmProjects\Automation_RobotFramework\Tests\eBay\Verify_Search_Func.robot">
-<test id="s1-t1" name="Verify basic search functionality" line="16">
-<kw name="Start TestCase" library="Common_Func_Path" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>${url.${env}}</arg>
-<arg>chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230403 01:57:29.324" level="INFO">Opening browser 'chrome' to base url 'https://www.ebay.com'.</msg>
-<status status="PASS" starttime="20230403 01:57:29.324" endtime="20230403 01:57:33.572"/>
+<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20230406 02:35:17.307" rpa="false" schemaversion="3">
+<suite id="s1" name="VariableScope" source="D:\TechProEdu\PycharmProjects\Automation_RobotFramework\Tests\Travels\VariableScope.robot">
+<test id="s1-t1" name="This is demo test 1" line="9">
+<kw name="Set Variable" library="BuiltIn">
+<var>${variable_demo}</var>
+<arg>This is TESTCASE variable</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230406 02:35:17.323" level="INFO">${variable_demo} = This is TESTCASE variable</msg>
+<status status="PASS" starttime="20230406 02:35:17.323" endtime="20230406 02:35:17.323"/>
 </kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230403 01:57:33.572" endtime="20230403 01:57:33.703"/>
+<kw name="Log" library="BuiltIn">
+<arg>${VARIABLE_DEMO}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230406 02:35:17.324" level="INFO">This is TESTCASE variable</msg>
+<status status="PASS" starttime="20230406 02:35:17.324" endtime="20230406 02:35:17.324"/>
 </kw>
-<status status="PASS" starttime="20230403 01:57:29.323" endtime="20230403 01:57:33.703"/>
-</kw>
-<kw name="Input Search Text and Click Search" library="HeaderPage">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>xpath://*[@id="gh-ac"]</arg>
-<arg>${search_text.key1}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230403 01:57:33.706" level="INFO">Typing text 'books' into text field 'xpath://*[@id="gh-ac"]'.</msg>
-<status status="PASS" starttime="20230403 01:57:33.705" endtime="20230403 01:57:33.952"/>
-</kw>
-<kw name="Press Keys" library="SeleniumLibrary">
-<arg>xpath://*[@id="gh-btn"]</arg>
-<arg>RETURN</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20230403 01:57:33.953" level="INFO">Sending key(s) ('RETURN',) to xpath://*[@id="gh-btn"] element.</msg>
-<msg timestamp="20230403 01:57:38.615" level="INFO">Pressing special key RETURN to element.</msg>
-<msg timestamp="20230403 01:57:38.615" level="INFO">Releasing special key RETURN.</msg>
-<status status="PASS" starttime="20230403 01:57:33.953" endtime="20230403 01:57:38.644"/>
-</kw>
-<status status="PASS" starttime="20230403 01:57:33.704" endtime="20230403 01:57:38.644"/>
-</kw>
-<kw name="Verify Search Results" library="SearchResultsPage">
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<arg>${search_result} ${search_text.key1}</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20230403 01:57:38.789" level="INFO">Current page contains text 'results for books'.</msg>
-<status status="PASS" starttime="20230403 01:57:38.645" endtime="20230403 01:57:38.789"/>
-</kw>
-<status status="PASS" starttime="20230403 01:57:38.645" endtime="20230403 01:57:38.789"/>
-</kw>
-<kw name="Search for Another Text" library="HeaderPage">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>xpath://*[@id="gh-ac"]</arg>
-<arg>${search_text.key2}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230403 01:57:38.791" level="INFO">Typing text 'travel' into text field 'xpath://*[@id="gh-ac"]'.</msg>
-<status status="PASS" starttime="20230403 01:57:38.790" endtime="20230403 01:57:39.139"/>
-</kw>
-<kw name="Press Keys" library="SeleniumLibrary">
-<arg>xpath://*[@id="gh-btn"]</arg>
-<arg>RETURN</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20230403 01:57:39.140" level="INFO">Sending key(s) ('RETURN',) to xpath://*[@id="gh-btn"] element.</msg>
-<msg timestamp="20230403 01:57:41.984" level="INFO">Pressing special key RETURN to element.</msg>
-<msg timestamp="20230403 01:57:41.984" level="INFO">Releasing special key RETURN.</msg>
-<status status="PASS" starttime="20230403 01:57:39.139" endtime="20230403 01:57:42.068"/>
-</kw>
-<status status="PASS" starttime="20230403 01:57:38.790" endtime="20230403 01:57:42.068"/>
-</kw>
-<kw name="Verify Another Search Result" library="SearchResultsPage">
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<arg>${search_result} ${search_text.key2}</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20230403 01:57:42.099" level="INFO">Current page contains text 'results for travel'.</msg>
-<status status="PASS" starttime="20230403 01:57:42.069" endtime="20230403 01:57:42.099"/>
-</kw>
-<status status="PASS" starttime="20230403 01:57:42.069" endtime="20230403 01:57:42.099"/>
-</kw>
-<kw name="Finish TestCase" library="Common_Func_Path" type="TEARDOWN">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230403 01:57:42.099" endtime="20230403 01:57:44.488"/>
-</kw>
-<status status="PASS" starttime="20230403 01:57:42.099" endtime="20230403 01:57:44.488"/>
-</kw>
-<doc>This test case verifies the basic search</doc>
-<tag>functional</tag>
-<status status="PASS" starttime="20230403 01:57:29.323" endtime="20230403 01:57:44.489"/>
+<status status="PASS" starttime="20230406 02:35:17.323" endtime="20230406 02:35:17.324"/>
 </test>
-<doc>Basic Search Functionality</doc>
-<status status="PASS" starttime="20230403 01:57:29.169" endtime="20230403 01:57:44.489"/>
+<test id="s1-t2" name="This is demo test 2" line="13">
+<kw name="Log" library="BuiltIn">
+<arg>${VARIABLE_DEMO}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230406 02:35:17.327" level="INFO">This is GLOBAL variable</msg>
+<status status="PASS" starttime="20230406 02:35:17.327" endtime="20230406 02:35:17.327"/>
+</kw>
+<status status="PASS" starttime="20230406 02:35:17.327" endtime="20230406 02:35:17.328"/>
+</test>
+<test id="s1-t3" name="This is demo test 3" line="16">
+<kw name="This is demo Keywords">
+<kw name="Log" library="BuiltIn">
+<arg>${VARIABLE_DEMO}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230406 02:35:17.330" level="INFO">This is KEYWORD variable</msg>
+<status status="PASS" starttime="20230406 02:35:17.330" endtime="20230406 02:35:17.330"/>
+</kw>
+<status status="PASS" starttime="20230406 02:35:17.329" endtime="20230406 02:35:17.330"/>
+</kw>
+<status status="PASS" starttime="20230406 02:35:17.329" endtime="20230406 02:35:17.330"/>
+</test>
+<status status="PASS" starttime="20230406 02:35:17.309" endtime="20230406 02:35:17.331"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">functional</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Verify Search Func">Verify Search Func</stat>
+<stat pass="3" fail="0" skip="0" id="s1" name="VariableScope">VariableScope</stat>
 </suite>
 </statistics>
 <errors>
