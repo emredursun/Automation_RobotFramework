@@ -1,0 +1,34 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.dll
+*.so
+*.dylib
+
+# Logs and reports
+output.xml
+log.html
+report.html
+debug.log
+
+# Test Data
+test_data/
+
+# Other temporary or generated files
+*.tmp
+*.bak
+*.swp
+*.~*
+
+# Editor and IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.pydevproject
+
+# Other project-specific files
+config.py
+credentials.py

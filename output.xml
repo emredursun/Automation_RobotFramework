@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20230406 01:40:55.363" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20230406 03:51:42.999" rpa="false" schemaversion="3">
 <suite id="s1" name="VariableScope" source="d:\TechProEdu\PycharmProjects\Automation_RobotFramework\Tests\Travels\VariableScope.robot">
-<test id="s1-t1" name="This is demo test 1" line="9">
+<test id="s1-t1" name="This is demo test 3" line="16">
+<kw name="This is demo Keywords">
 <kw name="Log" library="BuiltIn">
 <arg>${VARIABLE_DEMO}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230406 01:40:55.390" level="INFO">This is GLOBAL variable</msg>
-<status status="PASS" starttime="20230406 01:40:55.390" endtime="20230406 01:40:55.392"/>
+<msg timestamp="20230406 03:51:43.021" level="INFO">This is KEYWORD variable</msg>
+<status status="PASS" starttime="20230406 03:51:43.020" endtime="20230406 03:51:43.023"/>
 </kw>
-<status status="PASS" starttime="20230406 01:40:55.389" endtime="20230406 01:40:55.392"/>
+<status status="PASS" starttime="20230406 03:51:43.020" endtime="20230406 03:51:43.023"/>
+</kw>
+<status status="PASS" starttime="20230406 03:51:43.019" endtime="20230406 03:51:43.024"/>
 </test>
-<status status="PASS" starttime="20230406 01:40:55.377" endtime="20230406 01:40:55.394"/>
+<status status="PASS" starttime="20230406 03:51:43.004" endtime="20230406 03:51:43.025"/>
 </suite>
 <statistics>
 <total>
