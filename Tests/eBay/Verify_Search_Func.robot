@@ -17,11 +17,11 @@ Verify basic search functionality
     [Documentation]    This test case verifies the basic search
     [Tags]    functional
 
-    HeaderPage.Input Search Text and Click Search
-    SearchResultsPage.Verify Search Results
+    HeaderPage.Input Search Text and Click Search    mobile
+    SearchResultsPage.Verify Search Results    mobile
 
-    HeaderPage.Search for Another Text
-    SearchResultsPage.Verify Another Search Result
+    HeaderPage.Search for Another Text    robot
+    SearchResultsPage.Verify Another Search Result    robot
 
 #Verify advanced search functionality
 #    [Documentation]    This test case verifies the advanced search
