@@ -20,8 +20,6 @@ Verify basic search functionality
     HeaderPage.Input Search Text and Click Search    mobile
     SearchResultsPage.Verify Search Results    mobile
 
-    HeaderPage.Search for Another Text    robot
-    SearchResultsPage.Verify Another Search Result    robot
 
 #Verify advanced search functionality
 #    [Documentation]    This test case verifies the advanced search

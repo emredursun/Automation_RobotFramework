@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20230406 16:21:12.187" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20230406 16:58:34.866" rpa="false" schemaversion="3">
 <suite id="s1" name="Verify Search Func" source="D:\TechProEdu\PycharmProjects\Automation_RobotFramework\Tests\eBay\Verify_Search_Func.robot">
 <test id="s1-t1" name="Verify basic search functionality" line="16">
 <kw name="Start TestCase" library="Common_Func_Path" type="SETUP">
@@ -7,88 +7,58 @@
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230406 16:21:12.333" level="INFO">Opening browser 'chrome' to base url 'https://www.ebay.com'.</msg>
-<status status="PASS" starttime="20230406 16:21:12.333" endtime="20230406 16:21:16.459"/>
+<msg timestamp="20230406 16:58:35.006" level="INFO">Opening browser 'chrome' to base url 'https://www.ebay.com'.</msg>
+<status status="PASS" starttime="20230406 16:58:35.006" endtime="20230406 16:58:39.169"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230406 16:21:16.460" endtime="20230406 16:21:16.579"/>
+<status status="PASS" starttime="20230406 16:58:39.170" endtime="20230406 16:58:39.287"/>
 </kw>
-<status status="PASS" starttime="20230406 16:21:12.332" endtime="20230406 16:21:16.579"/>
+<status status="PASS" starttime="20230406 16:58:35.005" endtime="20230406 16:58:39.287"/>
 </kw>
 <kw name="Input Search Text and Click Search" library="HeaderPage">
 <arg>mobile</arg>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>xpath://*[@id="gh-ac"]</arg>
+<arg>${HomePageSearchTextBox}</arg>
 <arg>${search_text}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230406 16:21:16.579" level="INFO">Typing text 'mobile' into text field 'xpath://*[@id="gh-ac"]'.</msg>
-<status status="PASS" starttime="20230406 16:21:16.579" endtime="20230406 16:21:16.741"/>
+<msg timestamp="20230406 16:58:39.289" level="INFO">Typing text 'mobile' into text field 'xpath://*[@id='gh-ac']'.</msg>
+<status status="PASS" starttime="20230406 16:58:39.288" endtime="20230406 16:58:39.368"/>
 </kw>
 <kw name="Press Keys" library="SeleniumLibrary">
-<arg>xpath://*[@id="gh-btn"]</arg>
+<arg>${HomePageSearchButton}</arg>
 <arg>RETURN</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20230406 16:21:16.742" level="INFO">Sending key(s) ('RETURN',) to xpath://*[@id="gh-btn"] element.</msg>
-<msg timestamp="20230406 16:21:20.333" level="INFO">Pressing special key RETURN to element.</msg>
-<msg timestamp="20230406 16:21:20.334" level="INFO">Releasing special key RETURN.</msg>
-<status status="PASS" starttime="20230406 16:21:16.741" endtime="20230406 16:21:20.365"/>
+<msg timestamp="20230406 16:58:39.369" level="INFO">Sending key(s) ('RETURN',) to xpath://*[@id='gh-btn'] element.</msg>
+<msg timestamp="20230406 16:58:42.874" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20230406 16:58:42.874" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20230406 16:58:39.368" endtime="20230406 16:58:42.899"/>
 </kw>
-<status status="PASS" starttime="20230406 16:21:16.579" endtime="20230406 16:21:20.365"/>
+<status status="PASS" starttime="20230406 16:58:39.287" endtime="20230406 16:58:42.899"/>
 </kw>
 <kw name="Verify Search Results" library="SearchResultsPage">
 <arg>mobile</arg>
 <kw name="Page Should Contain" library="SeleniumLibrary">
 <arg>${search_result} ${search_text}</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20230406 16:21:20.638" level="INFO">Current page contains text 'results for mobile'.</msg>
-<status status="PASS" starttime="20230406 16:21:20.368" endtime="20230406 16:21:20.638"/>
+<msg timestamp="20230406 16:58:42.955" level="INFO">Current page contains text 'results for mobile'.</msg>
+<status status="PASS" starttime="20230406 16:58:42.899" endtime="20230406 16:58:42.956"/>
 </kw>
-<status status="PASS" starttime="20230406 16:21:20.367" endtime="20230406 16:21:20.638"/>
-</kw>
-<kw name="Search for Another Text" library="HeaderPage">
-<arg>robot</arg>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>xpath://*[@id="gh-ac"]</arg>
-<arg>${search_text}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230406 16:21:20.638" level="INFO">Typing text 'robot' into text field 'xpath://*[@id="gh-ac"]'.</msg>
-<status status="PASS" starttime="20230406 16:21:20.638" endtime="20230406 16:21:20.850"/>
-</kw>
-<kw name="Press Keys" library="SeleniumLibrary">
-<arg>xpath://*[@id="gh-btn"]</arg>
-<arg>RETURN</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20230406 16:21:20.852" level="INFO">Sending key(s) ('RETURN',) to xpath://*[@id="gh-btn"] element.</msg>
-<msg timestamp="20230406 16:21:23.252" level="INFO">Pressing special key RETURN to element.</msg>
-<msg timestamp="20230406 16:21:23.253" level="INFO">Releasing special key RETURN.</msg>
-<status status="PASS" starttime="20230406 16:21:20.850" endtime="20230406 16:21:23.263"/>
-</kw>
-<status status="PASS" starttime="20230406 16:21:20.638" endtime="20230406 16:21:23.263"/>
-</kw>
-<kw name="Verify Another Search Result" library="SearchResultsPage">
-<arg>robot</arg>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<arg>${search_result} ${search_text}</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20230406 16:21:23.401" level="INFO">Current page contains text 'results for robot'.</msg>
-<status status="PASS" starttime="20230406 16:21:23.264" endtime="20230406 16:21:23.401"/>
-</kw>
-<status status="PASS" starttime="20230406 16:21:23.264" endtime="20230406 16:21:23.401"/>
+<status status="PASS" starttime="20230406 16:58:42.899" endtime="20230406 16:58:42.956"/>
 </kw>
 <kw name="Finish TestCase" library="Common_Func_Path" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230406 16:21:23.401" endtime="20230406 16:21:26.783"/>
+<status status="PASS" starttime="20230406 16:58:42.956" endtime="20230406 16:58:45.154"/>
 </kw>
-<status status="PASS" starttime="20230406 16:21:23.401" endtime="20230406 16:21:26.783"/>
+<status status="PASS" starttime="20230406 16:58:42.956" endtime="20230406 16:58:45.154"/>
 </kw>
 <doc>This test case verifies the basic search</doc>
 <tag>functional</tag>
-<status status="PASS" starttime="20230406 16:21:12.332" endtime="20230406 16:21:26.783"/>
+<status status="PASS" starttime="20230406 16:58:35.005" endtime="20230406 16:58:45.155"/>
 </test>
 <doc>Basic Search Functionality</doc>
-<status status="PASS" starttime="20230406 16:21:12.188" endtime="20230406 16:21:26.800"/>
+<status status="PASS" starttime="20230406 16:58:34.868" endtime="20230406 16:58:45.158"/>
 </suite>
 <statistics>
 <total>

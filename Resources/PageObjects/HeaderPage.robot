@@ -1,22 +1,19 @@
 *** Settings ***
 Library  SeleniumLibrary
+Variables    ../Webelements.py
 
 *** Variables ***
-#${search_text}  robot
-# @{search_text}  book  travel  robot  gifts
-# &{search_text}    key1=books    key2=travel
+# ${SearchTextBox}    xpath://*[@id="gh-ac"]
+# ${SearchButton}    xpath://*[@id="gh-btn"]
+# ${AdvancedSearchLink}    xpath://*[@id="gh-as-a"]
 
 
 *** Keywords ***
 Input Search Text and Click Search
     [Arguments]    ${search_text}
-    Input Text  xpath://*[@id="gh-ac"]  ${search_text}
-    Press Keys  xpath://*[@id="gh-btn"]  RETURN
+    Input Text  ${HomePageSearchTextBox}  ${search_text}
+    Press Keys    ${HomePageSearchButton}    RETURN
 
-Search for Another Text
-    [Arguments]    ${search_text}
-    Input Text  xpath://*[@id="gh-ac"]  ${search_text}
-    Press Keys  xpath://*[@id="gh-btn"]  RETURN
 
 Click on Advanced Search Link
-    Click Element   xpath://*[@id="gh-as-a"]
+    Click Element    ${HomePageAdvancedSearchLink}

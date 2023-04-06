@@ -11,8 +11,8 @@ Verify Search Results
     Page Should Contain  ${search_result} ${search_text}
 
 Verify Another Search Result
-    [Arguments]    ${search_text}
-    Page Should Contain  ${search_result} ${search_text}
+    # [Arguments]    ${search_text}
+    # Page Should Contain  ${search_result} ${search_text}
 
 Select Product Condition
 
