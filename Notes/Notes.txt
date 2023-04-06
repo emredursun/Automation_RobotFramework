@@ -19,3 +19,4 @@ Robot Framework
 
 *** Dictionary Variable in Robot Framework ***
 Terminal run code: robot -d results -v env:eBay  Tests\eBay\Verify_Search_Func.robot
+Terminal run code: robot -d results -v url:https:www.ebay.com -v browser:chrome  Tests\eBay\Verify_Search_Func.robot

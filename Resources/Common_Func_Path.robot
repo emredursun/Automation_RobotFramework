@@ -2,14 +2,14 @@
 Library  SeleniumLibrary
 
 *** Variables ***
-${env}    eBay
-&{url}    qa=http://qa.demo.com    uat=http://uat.demo.com    dev=http://dev.demo.com    eBay=https://www.ebay.com
+${url}        https://www.ebay.com
+${browser}    chrome
 
 
 *** Keywords ***
 
 Start TestCase
-    Open Browser  ${url.${env}}  chrome
+    Open Browser    ${url}  ${browser} 
     Maximize Browser Window
 
 Finish TestCase
