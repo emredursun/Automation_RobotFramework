@@ -1,74 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20230406 16:58:34.866" rpa="false" schemaversion="3">
-<suite id="s1" name="Verify Search Func" source="D:\TechProEdu\PycharmProjects\Automation_RobotFramework\Tests\eBay\Verify_Search_Func.robot">
-<test id="s1-t1" name="Verify basic search functionality" line="16">
-<kw name="Start TestCase" library="Common_Func_Path" type="SETUP">
+<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20230407 04:35:29.080" rpa="false" schemaversion="3">
+<suite id="s1" name="WebLocators" source="D:\TechProEdu\PycharmProjects\Automation_RobotFramework\Tests\Travels\WebLocators.robot">
+<test id="s1-t1" name="TestCase to demostrate WebLocators in Robot FrameWork" line="6">
 <kw name="Open Browser" library="SeleniumLibrary">
-<arg>${url}</arg>
-<arg>${browser}</arg>
+<arg>https://www.ebay.com</arg>
+<arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230406 16:58:35.006" level="INFO">Opening browser 'chrome' to base url 'https://www.ebay.com'.</msg>
-<status status="PASS" starttime="20230406 16:58:35.006" endtime="20230406 16:58:39.169"/>
+<msg timestamp="20230407 04:35:29.208" level="INFO">Opening browser 'chrome' to base url 'https://www.ebay.com'.</msg>
+<status status="PASS" starttime="20230407 04:35:29.207" endtime="20230407 04:35:33.296"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230406 16:58:39.170" endtime="20230406 16:58:39.287"/>
+<status status="PASS" starttime="20230407 04:35:33.296" endtime="20230407 04:35:33.414"/>
 </kw>
-<status status="PASS" starttime="20230406 16:58:35.005" endtime="20230406 16:58:39.287"/>
-</kw>
-<kw name="Input Search Text and Click Search" library="HeaderPage">
-<arg>mobile</arg>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>${HomePageSearchTextBox}</arg>
-<arg>${search_text}</arg>
+<arg>name:_nkw</arg>
+<arg>robot</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230406 16:58:39.289" level="INFO">Typing text 'mobile' into text field 'xpath://*[@id='gh-ac']'.</msg>
-<status status="PASS" starttime="20230406 16:58:39.288" endtime="20230406 16:58:39.368"/>
+<msg timestamp="20230407 04:35:33.415" level="INFO">Typing text 'robot' into text field 'name:_nkw'.</msg>
+<status status="PASS" starttime="20230407 04:35:33.415" endtime="20230407 04:35:33.672"/>
 </kw>
-<kw name="Press Keys" library="SeleniumLibrary">
-<arg>${HomePageSearchButton}</arg>
-<arg>RETURN</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20230406 16:58:39.369" level="INFO">Sending key(s) ('RETURN',) to xpath://*[@id='gh-btn'] element.</msg>
-<msg timestamp="20230406 16:58:42.874" level="INFO">Pressing special key RETURN to element.</msg>
-<msg timestamp="20230406 16:58:42.874" level="INFO">Releasing special key RETURN.</msg>
-<status status="PASS" starttime="20230406 16:58:39.368" endtime="20230406 16:58:42.899"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230407 04:35:37.672" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20230407 04:35:33.672" endtime="20230407 04:35:37.672"/>
 </kw>
-<status status="PASS" starttime="20230406 16:58:39.287" endtime="20230406 16:58:42.899"/>
-</kw>
-<kw name="Verify Search Results" library="SearchResultsPage">
-<arg>mobile</arg>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<arg>${search_result} ${search_text}</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20230406 16:58:42.955" level="INFO">Current page contains text 'results for mobile'.</msg>
-<status status="PASS" starttime="20230406 16:58:42.899" endtime="20230406 16:58:42.956"/>
-</kw>
-<status status="PASS" starttime="20230406 16:58:42.899" endtime="20230406 16:58:42.956"/>
-</kw>
-<kw name="Finish TestCase" library="Common_Func_Path" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230406 16:58:42.956" endtime="20230406 16:58:45.154"/>
+<status status="PASS" starttime="20230407 04:35:37.672" endtime="20230407 04:35:40.000"/>
 </kw>
-<status status="PASS" starttime="20230406 16:58:42.956" endtime="20230406 16:58:45.154"/>
-</kw>
-<doc>This test case verifies the basic search</doc>
-<tag>functional</tag>
-<status status="PASS" starttime="20230406 16:58:35.005" endtime="20230406 16:58:45.155"/>
+<doc>This is sample test case to demostrate WebLocators in Robot FrameWork</doc>
+<status status="PASS" starttime="20230407 04:35:29.207" endtime="20230407 04:35:40.001"/>
 </test>
-<doc>Basic Search Functionality</doc>
-<status status="PASS" starttime="20230406 16:58:34.868" endtime="20230406 16:58:45.158"/>
+<status status="PASS" starttime="20230407 04:35:29.082" endtime="20230407 04:35:40.004"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">functional</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Verify Search Func">Verify Search Func</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="WebLocators">WebLocators</stat>
 </suite>
 </statistics>
 <errors>
