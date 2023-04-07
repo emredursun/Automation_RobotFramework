@@ -1,52 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20230407 17:02:17.386" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20230408 01:13:16.372" rpa="false" schemaversion="3">
 <suite id="s1" name="WebLocators" source="d:\TechProEdu\PycharmProjects\Automation_RobotFramework\Tests\Travels\WebLocators.robot">
-<test id="s1-t1" name="TestCase to demostrate Salesforce Page WebLocators in Robot FrameWork" line="18">
+<test id="s1-t1" name="TestCase to demonstrates how to locate a Dynamic WebElements on the Salesforce Website using Robot Framework" line="34">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>https://www.salesforce.com/nl/form/signup/freetrial-sales-essentials/</arg>
-<arg>chrome</arg>
+<arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230407 17:02:17.628" level="INFO">Opening browser 'chrome' to base url 'https://www.salesforce.com/nl/form/signup/freetrial-sales-essentials/'.</msg>
-<status status="PASS" starttime="20230407 17:02:17.628" endtime="20230407 17:02:21.947"/>
+<msg timestamp="20230408 01:13:16.485" level="INFO">Opening browser 'chrome' to base url 'https://www.salesforce.com/nl/form/signup/freetrial-sales-essentials/'.</msg>
+<status status="PASS" starttime="20230408 01:13:16.485" endtime="20230408 01:13:20.385"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230407 17:02:21.947" endtime="20230407 17:02:22.126"/>
+<status status="PASS" starttime="20230408 01:13:20.386" endtime="20230408 01:13:20.516"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>//*[@id="onetrust-reject-all-handler"]</arg>
+<arg>xpath://*[@id="onetrust-reject-all-handler"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230407 17:02:22.128" level="INFO">Clicking element '//*[@id="onetrust-reject-all-handler"]'.</msg>
-<status status="PASS" starttime="20230407 17:02:22.127" endtime="20230407 17:02:22.293"/>
+<msg timestamp="20230408 01:13:20.518" level="INFO">Clicking element 'xpath://*[@id="onetrust-reject-all-handler"]'.</msg>
+<status status="PASS" starttime="20230408 01:13:20.517" endtime="20230408 01:13:20.609"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>//input[@name='UserFirstName']</arg>
-<arg>Emre</arg>
+<arg>xpath://input[starts-with(@id, 'UserPhone-')]</arg>
+<arg>088 1234-23-345</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230407 17:02:22.301" level="INFO">Typing text 'Emre' into text field '//input[@name='UserFirstName']'.</msg>
-<status status="PASS" starttime="20230407 17:02:22.301" endtime="20230407 17:02:22.450"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>//input[@name='UserLastName']</arg>
-<arg>Dursun</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230407 17:02:22.450" level="INFO">Typing text 'Dursun' into text field '//input[@name='UserLastName']'.</msg>
-<status status="PASS" starttime="20230407 17:02:22.450" endtime="20230407 17:02:22.634"/>
+<msg timestamp="20230408 01:13:20.612" level="INFO">Typing text '088 1234-23-345' into text field 'xpath://input[starts-with(@id, 'UserPhone-')]'.</msg>
+<status status="PASS" starttime="20230408 01:13:20.611" endtime="20230408 01:13:20.810"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>4s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230407 17:02:26.635" level="INFO">Slept 4 seconds</msg>
-<status status="PASS" starttime="20230407 17:02:22.634" endtime="20230407 17:02:26.635"/>
+<msg timestamp="20230408 01:13:24.812" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20230408 01:13:20.811" endtime="20230408 01:13:24.812"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230407 17:02:26.637" endtime="20230407 17:02:28.970"/>
+<status status="PASS" starttime="20230408 01:13:24.812" endtime="20230408 01:13:27.078"/>
 </kw>
-<doc>This is sample test case to demostrate Salesforce Page WebLocators in Robot FrameWork</doc>
-<status status="PASS" starttime="20230407 17:02:17.624" endtime="20230407 17:02:28.971"/>
+<doc>This test case shows how to locate dynamic web elements on the Salesforce website using Robot Framework</doc>
+<status status="PASS" starttime="20230408 01:13:16.484" endtime="20230408 01:13:27.083"/>
 </test>
-<status status="PASS" starttime="20230407 17:02:17.398" endtime="20230407 17:02:28.974"/>
+<status status="PASS" starttime="20230408 01:13:16.375" endtime="20230408 01:13:27.091"/>
 </suite>
 <statistics>
 <total>
