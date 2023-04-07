@@ -1,90 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20230408 01:40:31.206" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20230408 01:52:58.733" rpa="false" schemaversion="3">
 <suite id="s1" name="DynamicWebElements" source="d:\TechProEdu\PycharmProjects\Automation_RobotFramework\Tests\Travels\DynamicWebElements.robot">
-<test id="s1-t1" name="TestCase to demonstrates how to locate Dynamic WebElements in Robot Framework" line="30">
+<test id="s1-t1" name="TestCase to demonstrates how to use XPath text() Method | Find element by Text" line="30">
 <kw name="Open Browser" library="SeleniumLibrary">
-<arg>http://www.uitestingplayground.com/dynamicid</arg>
+<arg>https://www.salesforce.com/nl/form/signup/freetrial-sales-essentials/</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230408 01:40:31.322" level="INFO">Opening browser 'chrome' to base url 'http://www.uitestingplayground.com/dynamicid'.</msg>
-<status status="PASS" starttime="20230408 01:40:31.322" endtime="20230408 01:40:34.643"/>
+<msg timestamp="20230408 01:52:58.867" level="INFO">Opening browser 'chrome' to base url 'https://www.salesforce.com/nl/form/signup/freetrial-sales-essentials/'.</msg>
+<status status="PASS" starttime="20230408 01:52:58.866" endtime="20230408 01:53:03.105"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230408 01:40:34.644" endtime="20230408 01:40:34.764"/>
+<status status="PASS" starttime="20230408 01:53:03.106" endtime="20230408 01:53:03.230"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://*[@id="onetrust-reject-all-handler"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230408 01:53:03.236" level="INFO">Clicking element 'xpath://*[@id="onetrust-reject-all-handler"]'.</msg>
+<status status="PASS" starttime="20230408 01:53:03.232" endtime="20230408 01:53:03.377"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>xpath=//button[contains(text(), 'Button with Dynamic ID')]</arg>
+<arg>xpath://a[text()='Main Services Agreement']</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230408 01:40:34.764" endtime="20230408 01:40:34.785"/>
+<status status="PASS" starttime="20230408 01:53:03.378" endtime="20230408 01:53:03.436"/>
 </kw>
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${dynamic_id}</var>
-<arg>Element Should Be Visible</arg>
-<arg>xpath=//button[contains(text(), 'Button with Dynamic ID')]@id</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Element Should Be Visible" library="SeleniumLibrary">
-<arg>xpath=//button[contains(text(), 'Button with Dynamic ID')]@id</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20230408 01:40:35.035" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20230408 01:40:35.035" level="FAIL">InvalidSelectorException: Message: invalid selector: Unable to locate an element with the xpath expression //button[contains(text(), 'Button with Dynamic ID')]@id because of the following error:
-SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//button[contains(text(), 'Button with Dynamic ID')]@id' is not a valid XPath expression.
-  (Session info: chrome=111.0.5563.147)
-Stacktrace:
-Backtrace:
-	(No symbol) [0x00F9DCE3]
-	(No symbol) [0x00F339D1]
-	(No symbol) [0x00E44DA8]
-	(No symbol) [0x00E476FB]
-	(No symbol) [0x00E475D0]
-	(No symbol) [0x00E47850]
-	(No symbol) [0x00E6FDF8]
-	(No symbol) [0x00E703AB]
-	(No symbol) [0x00E9EE9C]
-	(No symbol) [0x00E8AF14]
-	(No symbol) [0x00E9D57C]
-	(No symbol) [0x00E8ACC6]
-	(No symbol) [0x00E66F68]
-	(No symbol) [0x00E680CD]
-	GetHandleVerifier [0x01213832+2506274]
-	GetHandleVerifier [0x01249794+2727300]
-	GetHandleVerifier [0x0124E36C+2746716]
-	GetHandleVerifier [0x01046690+617600]
-	(No symbol) [0x00F3C712]
-	(No symbol) [0x00F41FF8]
-	(No symbol) [0x00F420DB]
-	(No symbol) [0x00F4C63B]
-	BaseThreadInitThunk [0x775B7D49+25]
-	RtlInitializeExceptionChain [0x77E3B74B+107]
-	RtlClearBits [0x77E3B6CF+191]
-</msg>
-<status status="FAIL" starttime="20230408 01:40:34.786" endtime="20230408 01:40:35.038"/>
-</kw>
-<msg timestamp="20230408 01:40:35.038" level="INFO">${dynamic_id} = False</msg>
-<status status="PASS" starttime="20230408 01:40:34.785" endtime="20230408 01:40:35.038"/>
-</kw>
-<kw name="Run Keyword If" library="BuiltIn">
-<arg>'${dynamic_id}' == 'True'</arg>
-<arg>Input Text</arg>
-<arg>xpath=//button[contains(text(), 'Button with Dynamic ID')]</arg>
-<arg>Test Input</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" starttime="20230408 01:40:35.038" endtime="20230408 01:40:35.039"/>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>xpath://a[text()='Main Services Agreement']</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20230408 01:53:03.437" level="INFO">Clicking link 'xpath://a[text()='Main Services Agreement']'.</msg>
+<status status="PASS" starttime="20230408 01:53:03.436" endtime="20230408 01:53:03.833"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230408 01:40:37.040" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230408 01:40:35.040" endtime="20230408 01:40:37.040"/>
+<msg timestamp="20230408 01:53:05.834" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230408 01:53:03.833" endtime="20230408 01:53:05.834"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230408 01:40:37.040" endtime="20230408 01:40:39.220"/>
+<status status="PASS" starttime="20230408 01:53:05.835" endtime="20230408 01:53:08.033"/>
 </kw>
-<doc>This is a sample test case that demonstrates how to locate dynamic web elements in Robot Framework</doc>
-<status status="PASS" starttime="20230408 01:40:31.321" endtime="20230408 01:40:39.221"/>
+<doc>This is a sample test case that demonstrates how to use XPath text() Method | Find element by Text</doc>
+<status status="PASS" starttime="20230408 01:52:58.865" endtime="20230408 01:53:08.034"/>
 </test>
-<status status="PASS" starttime="20230408 01:40:31.209" endtime="20230408 01:40:39.223"/>
+<status status="PASS" starttime="20230408 01:52:58.737" endtime="20230408 01:53:08.040"/>
 </suite>
 <statistics>
 <total>

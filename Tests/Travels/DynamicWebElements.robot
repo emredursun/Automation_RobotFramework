@@ -17,7 +17,7 @@ TestCase to demonstrates how to locate a Dynamic WebElements on the Salesforce W
 
 
 TestCase to demonstrates how to use XPath Contains Function in Robot Framework
-    [Documentation]    This is a sample test case that demonstrates how to locate dynamic web elements in Robot Framework
+    [Documentation]    This is a sample test case that demonstrates how to use XPath Contains Function in Robot Framework
     Open Browser    https://www.salesforce.com/nl/form/signup/freetrial-sales-essentials/      ${BROWSER}
     Maximize Browser Window
     Click Element    xpath://*[@id="onetrust-reject-all-handler"]
@@ -25,6 +25,18 @@ TestCase to demonstrates how to use XPath Contains Function in Robot Framework
     Input Text    xpath://input[contains(@id, 'UserEmail')]    info@gmail.com
     Sleep   2s
     Close Browser
+
+
+TestCase to demonstrates how to use XPath text() Method | Find element by Text
+    [Documentation]    This is a sample test case that demonstrates how to use XPath text() Method | Find element by Text
+    Open Browser    https://www.salesforce.com/nl/form/signup/freetrial-sales-essentials/      ${BROWSER}
+    Maximize Browser Window
+    Click Element    xpath://*[@id="onetrust-reject-all-handler"]
+    Wait Until Element Is Visible    xpath://a[text()='Main Services Agreement']
+    Click Link    xpath://a[text()='Main Services Agreement']
+    Sleep   2s
+    Close Browser
+
 
 
 TestCase to demonstrates how to locate Dynamic WebElements in Robot Framework
@@ -36,6 +48,4 @@ TestCase to demonstrates how to locate Dynamic WebElements in Robot Framework
     Run Keyword If    '${dynamic_id}' == 'True'    Input Text  xpath=//button[contains(text(), 'Button with Dynamic ID')]  Test Input
     Sleep   2s
     Close Browser
-
-
-
+    
