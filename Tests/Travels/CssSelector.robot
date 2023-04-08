@@ -18,6 +18,8 @@ TestCase to demostrate how to use Selenium CSS Selector in Robot FrameWork
     Input Text    css:input[name='UserLastName']    Dursun
     Click Element   css:div.country-state-group.section
     Wait Until Element Is Visible    css:button[name='Verzenden'][type='submit'][data-qe='form-submit']
-    
+    Input Text    css:input[id^='UserTitle']    QA Automation Engineer
+    Input Text    css:input[name$='Email']    info@gmail.com
+    Input Text    css:input[id*='erPhone']    088 999 543
     Sleep    3s
     Close Browser
