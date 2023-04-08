@@ -39,3 +39,13 @@ TestCase to demonstrates how to locate a Dynamic WebElements on the Salesforce W
     Input Text    xpath://input[starts-with(@id, 'UserPhone-')]    088 1234-23-345
     Sleep    4s
     Close Browser
+
+
+TestCase to demonstrates how to use XPath AND Operator | XPath OR Operator
+    [Documentation]    This test case shows how to use XPath AND Operator | XPath OR Operator
+    Open Browser    https://www.salesforce.com/nl/form/signup/freetrial-sales-essentials/      ${BROWSER}
+    Maximize Browser Window
+    Click Element    xpath://*[@id="onetrust-reject-all-handler"]
+    Input Text    xpath://input[@name='UserFirstName' and contains(@id, 'UserFirstName')]    HackYourFuture
+    Sleep    4s
+    Close Browser
