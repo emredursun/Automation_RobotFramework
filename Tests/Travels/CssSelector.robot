@@ -22,5 +22,6 @@ TestCase to demostrate how to use Selenium CSS Selector in Robot FrameWork
     Input Text    css:input[name$='Email']    info@gmail.com
     Input Text    css:input[id*='erPhone']    088 999 543
     Click Element    css:select[id^='CompanyCountry'] > option[value='NL']
+    Click Element    css:option[value='en_US'] + option
     Sleep    3s
     Close Browser
