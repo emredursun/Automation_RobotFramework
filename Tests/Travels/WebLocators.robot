@@ -78,4 +78,6 @@ TestCase to demonstrates how to use Axes Method descendant, descendant-or-self
     Wait Until Element Is Visible    xpath://*[contains(@class, 'formContainerV2')]//descendant-or-self::div
     Wait Until Element Is Visible    xpath://*[contains(@class, 'formContainerV2')]//descendant::div[@class='bodyCopyComponent parbase section']
     Wait Until Element Is Visible    xpath://*[contains(@class, 'formContainerV2')]//ancestor-or-self::div[@class='form-header-wrap']
+    Wait Until Element Is Visible    xpath://option[@value='NL']//preceding-sibling::option
+    Wait Until Element Is Visible    xpath://option[@value='US']//preceding::option
     Close Browser
