@@ -49,3 +49,22 @@ TestCase to demonstrates how to use XPath AND Operator | XPath OR Operator
     Input Text    xpath://input[@name='UserFirstName' and contains(@id, 'UserFirstName')]    HackYourFuture
     Sleep    4s
     Close Browser
+
+
+TestCase to demonstrates how to use XPath Axes Methods | Parent, Child, Self 1
+    [Documentation]    This test case shows how to use XPath Axes Methods | Parent, Child, Self
+    Open Browser    https://www.salesforce.com/nl/form/signup/freetrial-sales-essentials/      ${BROWSER}
+    Maximize Browser Window
+    Click Element    xpath://*[@id="onetrust-reject-all-handler"]
+    Wait Until Element Is Visible    xpath://select[contains(@name, 'CompanyCountry')]//child::option[5]
+    Close Browser
+
+
+TestCase to demonstrates how to use XPath Axes Methods | Parent, Child, Self 2
+    [Documentation]    This test case shows how to use XPath Axes Methods | Parent, Child, Self
+    Open Browser    https://www.salesforce.com/nl/form/signup/freetrial-sales-essentials/      ${BROWSER}
+    Maximize Browser Window
+    Click Element    xpath://*[@id="onetrust-reject-all-handler"]
+    Click Element   xpath://option[@value='NL']//parent::select
+    Sleep    3s
+    Close Browser
