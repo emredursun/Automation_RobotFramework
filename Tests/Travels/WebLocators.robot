@@ -77,4 +77,5 @@ TestCase to demonstrates how to use Axes Method descendant, descendant-or-self
     Click Element    xpath://*[@id="onetrust-reject-all-handler"]
     Wait Until Element Is Visible    xpath://*[contains(@class, 'formContainerV2')]//descendant-or-self::div
     Wait Until Element Is Visible    xpath://*[contains(@class, 'formContainerV2')]//descendant::div[@class='bodyCopyComponent parbase section']
+    Wait Until Element Is Visible    xpath://*[contains(@class, 'formContainerV2')]//ancestor-or-self::div[@class='form-header-wrap']
     Close Browser
