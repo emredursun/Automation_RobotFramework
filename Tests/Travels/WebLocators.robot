@@ -68,3 +68,13 @@ TestCase to demonstrates how to use XPath Axes Methods | Parent, Child, Self 2
     Click Element   xpath://option[@value='NL']//parent::select
     Sleep    3s
     Close Browser
+
+
+TestCase to demonstrates how to use Axes Method descendant, descendant-or-self
+    [Documentation]    This test case shows how to use Axes Method descendant, descendant-or-self
+    Open Browser    https://www.salesforce.com/nl/form/signup/freetrial-sales-essentials/      ${BROWSER}
+    Maximize Browser Window
+    Click Element    xpath://*[@id="onetrust-reject-all-handler"]
+    Wait Until Element Is Visible    xpath://*[contains(@class, 'formContainerV2')]//descendant-or-self::div
+    Wait Until Element Is Visible    xpath://*[contains(@class, 'formContainerV2')]//descendant::div[@class='bodyCopyComponent parbase section']
+    Close Browser
