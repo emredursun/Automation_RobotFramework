@@ -10,12 +10,12 @@ ${BROWSER}      chrome
 TestCase to demostrate eBay Page WebLocators in Robot FrameWork
     [Documentation]    This is sample test case to demostrate WebLocators in Robot FrameWork
 
-    Open Browser    https://www.ebay.com    chro${BROWSER}me
+    Open Browser    https://www.ebay.com    ${BROWSER}
     Maximize Browser Window
     # Input Text    id:gh-ac    robot
     # Click Link    link:About eBay
     Click Link    partial link:Seasonal Sales
-    Sleep    4s
+    Sleep    2s
     Close Browser
 
     
