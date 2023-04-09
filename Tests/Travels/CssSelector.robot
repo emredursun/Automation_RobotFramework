@@ -24,5 +24,6 @@ TestCase to demostrate how to use Selenium CSS Selector in Robot FrameWork
     Click Element    css:select[id^='CompanyCountry'] > option[value='NL']
     Click Element    css:option[value='en_US'] + option
     Click Element    css:select[id^='CompanyEmployees']>:nth-child(3)
+    Page Should Contain Element   css:form[name^='signup_form'] > input:nth-of-type(1)
     Sleep    2s
     Close Browser
