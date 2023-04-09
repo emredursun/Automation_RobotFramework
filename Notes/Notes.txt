@@ -6,6 +6,7 @@ Robot Framework
 # Install Selenium => pip install selenium    => pip show selenium
 # Install roboframework => pip install robotframework
 # Install Robotframework Selenium Library => pip install robotframework-seleniumlibrary
+# Install robotframework-webdrivermanager => pip install robotframework-webdrivermanager
 
 *** To See Installed Packages***
 # pip list
