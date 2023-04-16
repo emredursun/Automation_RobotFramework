@@ -21,8 +21,8 @@ Test Case to demostrate IF/ELSE in Robot FrameWork
     ${items_on_page}=    Get Element Count    xpath://div[@class='inventory_list']/div
     
     Run Keyword If    ${items_on_page} == 10    Test Keyword 1    
-    ...          ELSE IF    6 < ${items_on_page} < 10    Test Keyword 2    
-    ...          ELSE    Test Keyword 3    
+    ...         ELSE IF    6 < ${items_on_page} < 10    Test Keyword 2    
+    ...         ELSE    Test Keyword 3    
 
 
 *** Keywords ***
@@ -33,7 +33,7 @@ Test Keyword 1
 Test Keyword 2 
     Log To Console    Executed Keyword 2 - Found less than expected Items
     Close Browser
-    
+
 Test Keyword 3 
     Log To Console    Executed Keyword 3 - Exception
     Close Browser
