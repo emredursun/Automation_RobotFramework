@@ -1,14 +1,14 @@
 *** Settings ***
 Library    SeleniumLibrary
 Resource            ../../Resources/Common.robot
-Library    DataDriver    ../TestData/TestData.xlsx
+Library    DataDriver    ../TestData/TestData.xlsx    sheet_name=Sheet1
 
 Suite Setup     Common.Start TestCase
 Suite Teardown    Common.Finish TestCase
 Test Template    Invalid Login Scenarios
 
 
-*** Test Cases ***         
+*** Test Cases ***
 Verify Login Fails Invalid Creds    ${username}    ${password}    ${error_msg}
 
 
