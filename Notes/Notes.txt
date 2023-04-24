@@ -21,3 +21,15 @@ Robot Framework
 *** Dictionary Variable in Robot Framework ***
 Terminal run code: robot -d results -v env:eBay  Tests\eBay\Verify_Search_Func.robot
 Terminal run code: robot -d results -v url:https:www.ebay.com -v browser:chrome  Tests\eBay\Verify_Search_Func.robot
+
+
+DataDriver for Robot Framework => https://robocorp.com/docs/libraries/3rd-party-libraries/datadriver-library
+Installation
+If you already have Python >= 3.6 with pip installed, you can simply run:
+
+# pip install --upgrade robotframework-datadriver
+
+Excel Support
+For file support of xls or xlsx file you need to install the extra XLS or the dependencies. It contains the dependencies of pandas, numpy and xlrd. Just add [XLS] to your installation. New since version 3.6.
+
+# pip install --upgrade robotframework-datadriver[XLS]
